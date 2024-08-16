@@ -5,8 +5,8 @@
 int main(){
 	setlocale(LC_ALL, "Portuguese");
 	
-	//definição de variaveis
-	//os cont de periodo foram definicos como 1 para evitar erros de divisão
+	//definiÃ§Ã£o de variaveis
+	//os cont de periodo foram definicos como 1 para evitar erros de divisÃ£o
 	int contM=1, contT=1, contN=1, contE=0, contH=0, contB=0, qntFamilia=0, age=0, qntMenor=0, qntUm=0, qntDois=0, qntTres=0, qntQuatro=0, qntCinco=0, qntSeis=0, qntMaior=0;
 	char turno=NULL, area=NULL;
 	double aux=0, renda=0, rendaM=0, rendaT=0, rendaN=0;
@@ -26,7 +26,7 @@ int main(){
 		// verifica se foi pedido para adicionar aluno
 		if(aux == 0){
 			
-			// cadastra as informaçoes do aluno
+			// cadastra as informaÃ§oes do aluno
 			printf("\n\nTurno: \n");
 			scanf("\n%c", &turno);
 			
@@ -42,7 +42,7 @@ int main(){
 			printf("\nIdade: \n");
 			scanf("\n%d", &age);
 			
-			//analisa a qual turno o aluno pertence e soma sua renda à renda do turno alem de almentar o contador de alunos do turno
+			//analisa a qual turno o aluno pertence e soma sua renda Ã  renda do turno alem de almentar o contador de alunos do turno
 			if( turno == 'M' ){
 				rendaM= rendaM + renda;
 				contM++;
@@ -55,7 +55,7 @@ int main(){
 				rendaN= rendaN + renda;
 				contN++;
 			}
-			// verifica se a idade do aluno esta entre 18 e 22, se a quantidade de familiares é 3 ou 4 e se a renda é superior a 1800
+			// verifica se a idade do aluno esta entre 18 e 22, se a quantidade de familiares Ã© 3 ou 4 e se a renda Ã© superior a 1800
 			if(age>=18 && age<=22 ){
 				printf("\nPassou do primeiro if\n");
 				if(renda>1800 ){
@@ -108,9 +108,9 @@ int main(){
 	
 	printf("\na) \n");
 	
-	//os cont previamente foram startados em "1" para não ocorrer erros nas divisõa porem caso aja renda o cont é  nescessariamente superior a "1" e portanto
+	//os cont previamente foram startados em "1" para nÃ£o ocorrer erros nas divisÃµa porem caso aja renda o cont Ã©  nescessariamente superior a "1" e portanto
 	// podemos subtrair o "1" o qual foi-lhe atribuido para evitar erros
-	// no caso dos Cont de area não utiliza-se divisões com os mesmos ent foram definicos com 0
+	// no caso dos Cont de area nÃ£o utiliza-se divisÃµes com os mesmos ent foram definicos com 0
 	if(rendaM != 0){
 		contM--;
 	}
@@ -124,18 +124,18 @@ int main(){
 	
 	//verifica se ha rendas medias iguais
 	if((rendaM/contM)==(rendaT/contT)){
-		printf("\nA renda media da manhã e da tarde são iguais \n");
+		printf("\nA renda media da manhÃ£ e da tarde sÃ£o iguais \n");
 	}
 	if((rendaM/contM)==(rendaN/contN)){
-		printf("\nA renda media da manhã e da noite são iguais \n");
+		printf("\nA renda media da manhÃ£ e da noite sÃ£o iguais \n");
 	}
 	if((rendaN/contN)==(rendaT/contT)){
-		printf("\nA renda media da noite e da tarde são iguais \n");
+		printf("\nA renda media da noite e da tarde sÃ£o iguais \n");
 	}
 	
 	// verifica qual turno tem a maior renda media
 	if(((rendaM/contM)>(rendaT/contT)) && ((rendaM/contM)>(rendaN/contN))){
-		printf("\nO turno da manhã possui a maior renda media\n");
+		printf("\nO turno da manhÃ£ possui a maior renda media\n");
 	}else{
 		if(((rendaT/contT)>(rendaM/contM)) && ((rendaT/contT)>(rendaN/contN))){
 			printf("\nO turno da Tarde possui a maior renda media\n");
@@ -148,7 +148,7 @@ int main(){
 	
 	// verifica qual turno tem a menor renda media
 	if(((rendaM/contM)<(rendaT/contT)) && ((rendaM/contM)<(rendaN/contN))){
-		printf("\nO turno da manhã possui a menor renda media\n");
+		printf("\nO turno da manhÃ£ possui a menor renda media\n");
 	}else{
 		if(((rendaT/contT)<(rendaM/contM)) && ((rendaT/contT)<(rendaN/contN))){
 			printf("\nO turno da Tarde possui a menor renda media\n");
