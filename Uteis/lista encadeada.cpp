@@ -16,21 +16,21 @@ using namespace std;
 
 //struct "exemplo", dois elementos 
 
-//representaÁ„o de cada nÛ da lista
+//representa√ß√£o de cada n√≥ da lista
 
 typedef struct exemplo{
 
 	int v; 				 //inteiro
 
-	struct exemplo *prox; //ponteiro para o prÛximo elemento	
+	struct exemplo *prox; //ponteiro para o pr√≥ximo elemento	
 
 } t_exemplo;
 
 
 
-//DefiniÁ„o ponteiros globais que guardam a referÍncia para a cabeÁa da lista
+//Defini√ß√£o ponteiros globais que guardam a refer√™ncia para a cabe√ßa da lista
 
-//e para o nÛ corrente cabeÁa da lista encadeada 
+//e para o n√≥ corrente cabe√ßa da lista encadeada 
 
 t_exemplo *cabeca = NULL;
 
@@ -38,7 +38,7 @@ t_exemplo *corrente = NULL;
 
 
 
-//FUN«√O CRIAR LISTA
+//FUN√á√ÉO CRIAR LISTA
 
 //recebe um valor "valor" inteiro e retorna um ponteiro do tipo t_exemplo
 
@@ -46,19 +46,19 @@ t_exemplo * criar_lista(int valor) {
 
 	
 
-	//alocar espaÁo em memÛria 
+	//alocar espa√ßo em mem√≥ria 
 
 	t_exemplo * p = (t_exemplo*) malloc(sizeof(t_exemplo));
 
 	
 
-	//Verificar se houve falha na alocaÁ„o da memÛria
+	//Verificar se houve falha na aloca√ß√£o da mem√≥ria
 
 
 
 	if(p==NULL){
 
-		cout<<"\nFalha ao alocar a memÛria\n";
+		cout<<"\nFalha ao alocar a mem√≥ria\n";
 
 		return NULL;
 
@@ -72,13 +72,13 @@ t_exemplo * criar_lista(int valor) {
 
 
 
-	//atribuir valor ao prÛximo
+	//atribuir valor ao pr√≥ximo
 
 	p->prox = NULL;	
 
 
 
-	//fazer a cabeÁa da lista e o corrente e apontar para p
+	//fazer a cabe√ßa da lista e o corrente e apontar para p
 
 	cabeca = corrente = p;
 
@@ -90,7 +90,7 @@ t_exemplo * criar_lista(int valor) {
 
 
 
-//FUN«√O INSERIR ELEMENTOS NA LISTA
+//FUN√á√ÉO INSERIR ELEMENTOS NA LISTA
 
 //recebe um valor "v" inteiro e retorna um ponteiro do tipo t_exemplo
 
@@ -98,9 +98,9 @@ t_exemplo* adicionar_lista(int v){
 
 
 
-	//verificar se a cabeÁa È NULL(lista vazia),
+	//verificar se a cabe√ßa √© NULL(lista vazia),
 
-	//se for NULL, ent„o retornar a funÁ„o criar_lista
+	//se for NULL, ent√£o retornar a fun√ß√£o criar_lista
 
 	if(cabeca==NULL){
 
@@ -112,19 +112,19 @@ t_exemplo* adicionar_lista(int v){
 
 
 
-	//se a cabeÁa n„o for NULL
+	//se a cabe√ßa n√£o for NULL
 
-	//alocar espaÁo em memÛria
+	//alocar espa√ßo em mem√≥ria
 
 	t_exemplo * p = (t_exemplo*) malloc(sizeof(t_exemplo));
 
 	
 
-	//verificar se houve falha na alocaÁ„o da memÛria
+	//verificar se houve falha na aloca√ß√£o da mem√≥ria
 
 	if(p==NULL){
 
-		cout<<"\nFalha ao alocar a memÛria\n";
+		cout<<"\nFalha ao alocar a mem√≥ria\n";
 
 		return NULL;
 
@@ -140,7 +140,7 @@ t_exemplo* adicionar_lista(int v){
 
 
 
-	//apontar nÛ corrente para p
+	//apontar n√≥ corrente para p
 
 	corrente->prox=p;
 
@@ -162,11 +162,11 @@ t_exemplo* adicionar_lista(int v){
 
 
 
-//FUN«√O IMPRIMIR
+//FUN√á√ÉO IMPRIMIR
 
 void imprimir_lista(){
 
-	//inicialmente apontar para a cabeÁa da lista
+	//inicialmente apontar para a cabe√ßa da lista
 
 	t_exemplo *aux= cabeca;
 
@@ -178,7 +178,7 @@ void imprimir_lista(){
 
 		cout<<"\n"<<aux->v;
 
-		//aponta para o prÛximo elemento da lista
+		//aponta para o pr√≥ximo elemento da lista
 
 		aux=aux->prox;	
 
@@ -188,7 +188,7 @@ void imprimir_lista(){
 
 
 
-//FUN«√O PARA VERIFICAR SE A LISTA EST¡ VAZIA
+//FUN√á√ÉO PARA VERIFICAR SE A LISTA EST√Å VAZIA
 
 //retornar 1 se estiver vazia e 0 zero conter elementos
 
@@ -196,7 +196,7 @@ int lista_vazia(){
 
 	
 
-	//Se a cabeÁa for NULL, ent„o a lista est· vazia
+	//Se a cabe√ßa for NULL, ent√£o a lista est√° vazia
 
 	if(cabeca == NULL){
 
@@ -210,29 +210,29 @@ int lista_vazia(){
 
 
 
-//FUN«√O BUSCAR
+//FUN√á√ÉO BUSCAR
 
-//Essa funÁ„o recebe o valor a ser buscado
+//Essa fun√ß√£o recebe o valor a ser buscado
 
 //e um ponteiro para o ponteiro "ant"
 
-//o "ant" servir· para guardarmos o anterior do elemento encontrado,
+//o "ant" servir√° para guardarmos o anterior do elemento encontrado,
 
-//pois iremos utilizar na remoÁ„o, assim fica mais otimizado para n„o ter que 
+//pois iremos utilizar na remo√ß√£o, assim fica mais otimizado para n√£o ter que 
 
 //percorrer a lista novamente pois precisa-se do elemento anterior ao elemento
 
-//ir· ser removido para ajustar corretamente a lista.
+//ir√° ser removido para ajustar corretamente a lista.
 
-//Retornar o ponteiro para o elemento encontrado ou NULL se n„o encontrar.
+//Retornar o ponteiro para o elemento encontrado ou NULL se n√£o encontrar.
 
 t_exemplo * buscar_elemento(int v, t_exemplo **ant){
 
 	
 
-	//se a lista estiver vazia, ent„o n„o possue elementos,
+	//se a lista estiver vazia, ent√£o n√£o possue elementos,
 
-	//Portanto, retorna 0 indicando que n„o achou.
+	//Portanto, retorna 0 indicando que n√£o achou.
 
 	if(lista_vazia()==1){
 
@@ -266,7 +266,7 @@ t_exemplo * buscar_elemento(int v, t_exemplo **ant){
 
 		
 
-		//Se achou, ent„o retorna 1
+		//Se achou, ent√£o retorna 1
 
 		if(p->v == v){
 
@@ -284,7 +284,7 @@ t_exemplo * buscar_elemento(int v, t_exemplo **ant){
 
 		
 
-		//aponta para o prÛximo
+		//aponta para o pr√≥ximo
 
 		p = p->prox;
 
@@ -318,11 +318,11 @@ t_exemplo * buscar_elemento(int v, t_exemplo **ant){
 
 
 
-//FUN«√O REMOVER
+//FUN√á√ÉO REMOVER
 
 //retornar 1 se conseguir remover
 
-//e 0 caso contr·rio
+//e 0 caso contr√°rio
 
 int remover_elemento(int v){
 
@@ -338,9 +338,9 @@ int remover_elemento(int v){
 
 	//buscar pelo elemento a se removido
 
-	//passar a referÍncia para o "ant" (ponteiro para ponteiro)
+	//passar a refer√™ncia para o "ant" (ponteiro para ponteiro)
 
-	//"elem" È o elemento que vai ser removido
+	//"elem" √© o elemento que vai ser removido
 
 	
 
@@ -348,7 +348,7 @@ int remover_elemento(int v){
 
 	
 
-	//se for NULL, È porque n„o existe, ent„o retorna 0
+	//se for NULL, √© porque n√£o existe, ent√£o retorna 0
 
 	if (elem  == NULL){
 
@@ -360,9 +360,9 @@ int remover_elemento(int v){
 
 	//se existe o elemento
 
-	//se o anterior for diferente de NUll, ent„o
+	//se o anterior for diferente de NUll, ent√£o
 
-	//fazer o prÛximo do anterior apontar para o prÛximo do elemento que ser· removido
+	//fazer o pr√≥ximo do anterior apontar para o pr√≥ximo do elemento que ser√° removido
 
 	if (ant != NULL){
 
@@ -374,9 +374,9 @@ int remover_elemento(int v){
 
 	
 
-	//se o elemento a ser removido È igual ao corrente, ou seja,
+	//se o elemento a ser removido √© igual ao corrente, ou seja,
 
-	//È o ˙timo elemento, ent„o fazer o corrente apontar para o anterior
+	//√© o √∫timo elemento, ent√£o fazer o corrente apontar para o anterior
 
 	if (elem == corrente){
 
@@ -386,9 +386,9 @@ int remover_elemento(int v){
 
 	
 
-	//se elemento a ser removido È igual ao nÛ cabeÁa, ou seja,
+	//se elemento a ser removido √© igual ao n√≥ cabe√ßa, ou seja,
 
-	//È o primeiro elemento, ent„o faz a cabeÁa apontar para o prÛximo do elemento
+	//√© o primeiro elemento, ent√£o faz a cabe√ßa apontar para o pr√≥ximo do elemento
 
 	//a ser removido
 
@@ -448,7 +448,7 @@ int tamanho_lista( ){
 
 
 
-//FUN«√O PRINCIPAL
+//FUN√á√ÉO PRINCIPAL
 
 int main ( int argc, char*argv[]){
 
@@ -456,11 +456,11 @@ int main ( int argc, char*argv[]){
 
 	setlocale (LC_ALL, "Portuguese");
 
-	//funÁ„o que verifica se a lista est· vazia
+	//fun√ß√£o que verifica se a lista est√° vazia
 
 	if(lista_vazia()==0){
 
-		cout<< "A lista n„o est· vazia\n";
+		cout<< "A lista n√£o est√° vazia\n";
 
 	} else {
 
@@ -484,7 +484,7 @@ int main ( int argc, char*argv[]){
 
 	
 
-	//adicionar outros elementos ‡ lista
+	//adicionar outros elementos √† lista
 
 	cout << "\nAdicionando elementos na lista... \n\n";
 
@@ -498,7 +498,7 @@ int main ( int argc, char*argv[]){
 
 	
 
-	//Chamar a funÁ„o para imprimir a lista
+	//Chamar a fun√ß√£o para imprimir a lista
 
 	cout<<"Imprimindo os elementos da lista...";
 
@@ -508,11 +508,11 @@ int main ( int argc, char*argv[]){
 
 	if(lista_vazia()==0){
 
-		cout<<"\n\nA lista n„o est· vazia \n";
+		cout<<"\n\nA lista n√£o est√° vazia \n";
 
 	}else{
 
-		cout<<"\n\nA lista est· vazia";
+		cout<<"\n\nA lista est√° vazia";
 
 	}
 
@@ -524,7 +524,7 @@ int main ( int argc, char*argv[]){
 
 	//buscar um elemento na lista
 
-	//retorna diferente de null se achou e null caso contr·rio
+	//retorna diferente de null se achou e null caso contr√°rio
 
 	if (buscar_elemento(10, NULL) != NULL){
 
@@ -560,7 +560,7 @@ int main ( int argc, char*argv[]){
 
 	} else{
 
-		cout<< "N„o foi possÌvel remover o elemento 30\n";
+		cout<< "N√£o foi poss√≠vel remover o elemento 30\n";
 
 	}
 
